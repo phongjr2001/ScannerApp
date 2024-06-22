@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fg_color"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/fg_color">
+
+                <ImageView
+                    android:id="@+id/iv_drawer"
+                    android:layout_width="35dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="7dp"
+                    android:onClick="onClick"
+                    android:padding="1dp"
+                    android:src="@drawable/ic_user" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/iv_drawer"
+                    android:gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:singleLine="true"
+                    android:text="CamScaner"
+                    android:textColor="@color/black"
+                    android:textSize="35dp"
+
+                    android:textStyle="bold" />
+                <ImageView
+                    android:id="@+id/iv_folder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:onClick="onClick"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="7dp"
+                    android:src="@drawable/ic_folder_plus_icon" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_search_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="7dp"
+                android:background="@drawable/search_bar_bg"
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/iv_close_search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="5dp"
+                    android:onClick="onClick"
+                    android:padding="7dp"
+                    android:src="@drawable/ic_search" />
+
+                <EditText
+                    android:id="@+id/et_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_toStartOf="@+id/iv_clear_txt"
+                    android:layout_toEndOf="@+id/iv_close_search"
+                    android:background="@color/transparent"
+                    android:cursorVisible="true"
+                    android:focusable="true"
+                    android:hint="Search for Document..."
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:textColor="#858997"
+                    android:textColorHint="#a2a8b9"
+                    android:textSize="12dp" />
+
+                <ImageView
+                    android:id="@+id/iv_clear_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="5dp"
+                    android:onClick="onClick"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_close"
+                    android:visibility="invisible" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="3dp"
+                    android:visibility="visible" />
+
+                <!--                <LinearLayout-->
+                <!--                    android:id="@+id/ly_empty"-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="match_parent"-->
+                <!--                    android:gravity="center"-->
+                <!--                    android:orientation="vertical"-->
+                <!--                    android:paddingBottom="30dp"-->
+                <!--                    android:visibility="visible">-->
+
+                <!--                    <ImageView-->
+                <!--                        android:visibility="gone"-->
+                <!--                        android:layout_width="206dp"-->
+                <!--                        android:layout_height="126dp"-->
+                <!--                        android:src="@drawable/ic_default_doc" />-->
+
+                <!--                    <TextView-->
+                <!--                        android:id="@+id/tv_empty"-->
+                <!--                        android:layout_width="wrap_content"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:layout_marginTop="20dp"-->
+                <!--                        android:gravity="center"-->
+                <!--                        android:singleLine="true"-->
+                <!--                        android:text="@string/noDocumentScan"-->
+                <!--                        android:textColor="@color/unselected_txt_color"-->
+                <!--                        android:textSize="15dp" />-->
+                <!--                </LinearLayout>-->
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="50dp"
+                android:background="@drawable/rounded_bg"
+                android:gravity="center"
+                android:visibility="invisible">
+
+                <ImageView
+                    android:id="@+id/iv_group_camera"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:foregroundGravity="center"
+                    android:onClick="onClick"
+                    android:src="@drawable/ic_camera" />
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>
